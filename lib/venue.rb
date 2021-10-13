@@ -21,9 +21,9 @@ class Venue
 
   def over_capacity?
     if patrons.length > capacity
-      false
-    else
       true
+    else
+      false
     end
   end
 
@@ -31,6 +31,6 @@ class Venue
     if patrons.length > capacity
       patrons.shift
     end
-  end 
+  end
 
 end
