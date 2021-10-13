@@ -16,7 +16,7 @@ class Venue
 
   def yell_at_patrons
     @patrons.each do |patron|
-      @patrons.upcase << patron
+      patron.upcase << 
     end
 
   end
