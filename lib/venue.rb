@@ -27,4 +27,10 @@ class Venue
     end
   end
 
+  def kick_out
+    if patrons.length > capacity
+      patrons.shift
+    end
+  end 
+
 end
