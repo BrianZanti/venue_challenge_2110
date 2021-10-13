@@ -65,4 +65,17 @@ describe Venue do
       expect(venue.over_capacity).to eq(true)
     end
   end
+
+  describe '#kick_out' do # test passes, but unfinished for testing loop.
+    it 'deletes people from venue until under capacity' do
+      venue = Venue.new('Bluebird', 4)
+      venue.add_patron('Mike')
+      venue.add_patron('Megan')
+      venue.add_patron('Bob')
+      venue.add_patron('James')
+      venue.add_patron('Cat')
+      venue.add_patron('Jimmy')
+      expect(venue.kick_out).to eq(venue.patrons)
+    end
+  end
 end

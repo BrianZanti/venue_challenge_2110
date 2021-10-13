@@ -26,4 +26,13 @@ class Venue
     end
   end
 
+  def kick_out # add loop to remove patrons until under capacity.
+      if over_capacity == true
+        @patrons.delete(@patrons.sample)
+      elsif over_capacity == false
+        puts "We're under capacity."
+      end
+    return @patrons
+  end
+
 end
