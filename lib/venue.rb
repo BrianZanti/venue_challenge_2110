@@ -18,4 +18,14 @@ class Venue
       patron.upcase
     end
   end
+
+  def over_capacity
+    @patrons.length > 4
+  end
+
+  def kick_out
+    if over_capacity
+      @patrons.pop
+    end
+  end
 end
