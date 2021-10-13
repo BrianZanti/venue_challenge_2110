@@ -18,4 +18,12 @@ class Venue
       patron.upcase
     end
   end
+
+  def over_capacity?
+    if @patrons.length <= @capacity
+      false
+    elsif @patrons.length > @capacity
+      true
+    end 
+  end
 end
