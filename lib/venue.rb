@@ -29,4 +29,10 @@ class Venue
     end
   end
 
+  def kick_out
+    for i in self.patrons
+      self.patrons.pop until self.patrons.size <= self.capacity
+    end
+
+  end
 end
