@@ -8,6 +8,8 @@ describe Venue do
       expect(venue).to be_a Venue
     end
 
+
+
     it 'can read the name' do
       venue = Venue.new('Bluebird', 4)
       expect(venue.name).to eq 'Bluebird'
@@ -44,6 +46,28 @@ describe Venue do
       venue.add_patron('Megan')
       venue.add_patron('Bob')
       expect(venue.yell_at_patrons).to eq ['MIKE', 'MEGAN', 'BOB']
+    end
+  end
+
+  describe '#over_capacity?' do
+    it 'compares number of patrons to capacity' do
+      venue = Venue.new('Bluebird', 4)
+      venue.add_patron('Mike')
+      venue.add_patron('Megan')
+      venue.add_patron('Bob')
+      expect(venue.over_capacity?).to eq false
+    end
+  end
+
+  describe '#over_capacity?' do
+    it 'compares number of patrons to capacity' do
+      venue = Venue.new('Bluebird', 4)
+      venue.add_patron('Mike')
+      venue.add_patron('Megan')
+      venue.add_patron('Bob')
+      venue.add_patron('Jenny')
+      venue.add_patron('Sarah')
+      expect(venue.over_capacity?).to eq true
     end
   end
 end
