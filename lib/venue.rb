@@ -17,6 +17,14 @@ class Venue
       names_yelled << yell.upcase
     end
     return names_yelled
-  end 
+  end
+
+  def over_capacity?
+    if patrons.length > capacity
+      false
+    else
+      true
+    end
+  end
 
 end
