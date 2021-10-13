@@ -77,7 +77,7 @@ describe Venue do
   # Iteration 4
 
   describe '#kick_out' do
-    it 'returns an integer less than or eqaul to the capacity' do
+    it 'kicks out patrons until less than or equal to capacity' do
       venue = Venue.new('Bluebird', 4)
       venue.add_patron('Mike')
       venue.add_patron('Megan')
@@ -85,7 +85,7 @@ describe Venue do
       venue.add_patron('James')
       venue.add_patron('Cat')
       venue.kick_out
-      expect(venue.kick_out).to be <= venue.capacity
+      expect(venue.patrons.count).to be <= venue.capacity
     end
   end
 

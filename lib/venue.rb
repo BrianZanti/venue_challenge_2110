@@ -22,20 +22,16 @@ class Venue
 
   def over_capacity?
     if patrons.count > capacity
-      over_capacity = true
+      return true
     else
-      over_capacity = false
+      return false
     end
-    return over_capacity
   end
 
   def kick_out
-    if self.over_capacity?
-      while patrons.count > capacity
-        patrons.pop
-      end
+    while patrons.count > capacity
+      patrons.pop
     end
-    return patrons.count
   end
 
 
