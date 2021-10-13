@@ -18,4 +18,12 @@ class Venue
     return yelled_patrons.flatten
   end
 
+  def over_capacity
+    if @patrons.length > @capacity
+      return true
+    elsif @patrons.length <= @capacity
+      return false
+    end
+  end
+
 end
