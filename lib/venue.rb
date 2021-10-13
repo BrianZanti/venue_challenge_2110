@@ -21,4 +21,12 @@ class Venue
     return modified_array
   end
 
+  def over_capacity?
+    if self.patrons.size <= self.capacity
+      false
+    else
+      true
+    end
+  end
+
 end
