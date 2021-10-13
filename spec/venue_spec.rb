@@ -60,7 +60,21 @@ describe Venue do
       expect(venue.over_capacity?).to be true
     end
 
+    # Iteration 4
+
+  describe '#kick_out' do
+    it 'removes patrons until under or at capacity' do
+      venue = Venue.new('Soeu', 3)
+      venue.add_patron('Joe')
+      venue.add_patron('Moe')
+      venue.add_patron('Boe')
+      venue.add_patron('Dingus')
+      venue.kick_out
+
+      expect(venue.over_capacity?).to be false
     end
+  end
 
 
+    end
 end
