@@ -21,4 +21,10 @@ class Venue
       return "Invalid input"
     end
   end
+  def kick_out
+    while @patrons.size > @capacity
+      @patrons.pop
+    end
+    return @patrons
+  end
 end
