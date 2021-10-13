@@ -30,7 +30,7 @@ class Venue
   end
 
   def kick_out
-    for i in self.patrons
+    for i in self.patrons # I definitely could've made this very simple with just an 'until' loop but I want to get comfortable with 'for' loops
       self.patrons.pop until self.patrons.size <= self.capacity
     end
 
