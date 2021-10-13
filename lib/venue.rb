@@ -24,7 +24,8 @@ class Venue
   end
 
   def kick_out
-    @patrons.shift
-    @patrons
+    while @patrons.length > @capacity do
+      @patrons.shift
+    end
   end
 end
